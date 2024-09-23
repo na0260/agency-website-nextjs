@@ -1,13 +1,6 @@
-async function getData(){
-    const res=await fetch(process.env.BASE_URL+"api/TeamList");
-    if(!res.ok){
-        throw new Error("TeamList Calling Fail");
-    }
-    return res.json();
-}
+
 
 const Team = async () => {
-    const data = await getData();
     return (
         <div>
             <section>
@@ -33,38 +26,33 @@ const Team = async () => {
                         </div>
                         <div className="flex flex-wrap -mx-4">
 
-                            {
-                                data.map((item,i)=>{
-                                    return(
-                                        <div key={i} className="mb-6 w-full lg:w-1/2 px-4">
+                                        <div className="mb-6 w-full lg:w-1/2 px-4">
                                             <div className="flex flex-wrap items-center bg-white rounded shadow overflow-hidden">
                                                 <img className="w-full lg:w-1/3 h-80 object-cover"
-                                                     src={item['image']}
+                                                     src={'ds'}
                                                      alt=""/>
                                                 <div className="w-full lg:w-2/3 lg:pl-6 p-4">
                                                     <h4 className="mb-2 text-2xl font-bold font-heading">
-                                                        {item['name']}
+
                                                     </h4>
                                                     <p className="mb-4 text-gray-500 leading-loose">
-                                                        {item['bio']}
+
                                                     </p>
                                                     <div className="flex">
-                                                        <a className="mr-3" href={item['facebook']}>
+                                                        <a className="mr-3" href={'#'}>
                                                             <img src="atis-assets/social/facebook.svg" alt=""/>
                                                         </a>
-                                                        <a className="mr-3" href={item['twitter']}>
+                                                        <a className="mr-3" href={'#'}>
                                                             <img src="atis-assets/social/twitter.svg" alt=""/>
                                                         </a>
-                                                        <a href={item['instagram']}>
+                                                        <a href={'#'}>
                                                             <img src="atis-assets/social/instagram.svg" alt=""/>
                                                         </a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    )
-                                })
-                            }
+
 
 
 

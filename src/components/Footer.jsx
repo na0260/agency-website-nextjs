@@ -1,16 +1,6 @@
-async function getData(){
-    const res=await fetch(process.env.BASE_URL+"api/SocialLink");
-    if(!res.ok){
-        throw new Error("SocialLink List Calling Fail");
-    }
-    return res.json();
-}
-
-
 import Link from "next/link";
 
 const Footer = async () => {
-    const data = await getData();
     return (
         <section>
             <div className="skew skew-top mr-for-radius">
@@ -96,13 +86,13 @@ const Footer = async () => {
                         <p className="order-last text-sm text-gray-400">© 2024. All rights reserved.
                         </p>
                         <div className="mb-4 lg:mb-0 order-first lg:order-last">
-                            <a className="inline-block mr-2 p-2 bg-gray-800 hover:bg-gray-700 rounded" target="_blank" href={data[0]['link']}>
+                            <a className="inline-block mr-2 p-2 bg-gray-800 hover:bg-gray-700 rounded" target="_blank" href={"#"}>
                                 <img src="atis-assets/social/facebook.svg"/>
                             </a>
-                            <a className="inline-block mr-2 p-2 bg-gray-800 hover:bg-gray-700 rounded" target="_blank" href={data[1]['link']}>
+                            <a className="inline-block mr-2 p-2 bg-gray-800 hover:bg-gray-700 rounded" target="_blank" href={"#"}>
                                 <img src="atis-assets/social/twitter.svg"/>
                             </a>
-                            <a className="inline-block mr-2 p-2 bg-gray-800 hover:bg-gray-700 rounded" target="_blank" href={data[2]['link']}>
+                            <a className="inline-block mr-2 p-2 bg-gray-800 hover:bg-gray-700 rounded" target="_blank" href={"#"}>
                                 <img src="atis-assets/social/instagram.svg"/>
                             </a>
                         </div>

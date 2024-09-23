@@ -1,17 +1,6 @@
 import Link from "next/link";
 
-async function getData(){
-    const res=await fetch(process.env.BASE_URL+"api/FeaturedProject");
-    if(!res.ok){
-        throw new Error("FeaturedProject Calling Fail");
-    }
-    return res.json();
-}
-
-
 const FeaturedProjects = async () => {
-
-    const data = await getData();
 
     return (
         <section>
@@ -39,17 +28,12 @@ const FeaturedProjects = async () => {
                         <Link className="hidden md:inline-block py-2 px-6 rounded-l-xl rounded-t-xl bg-green-600 hover:bg-green-700 text-gray-50 font-bold leading-loose transition duration-200" href="/projects">View More Projects</Link>
                     </div>
                     <div className="flex flex-wrap -mx-4 mb-4">
-                        {
-                            data.map((item,i)=>{
-                                return(
-                                    <div key={i} className="w-full md:w-1/2 lg:w-1/3 mb-8 px-4">
-                                        <a target="_blank" href={item['live']}>
-                                            <img className="h-80 w-full mx-auto object-cover rounded" src={item['image']} alt=""/>
+
+                                    <div  className="w-full md:w-1/2 lg:w-1/3 mb-8 px-4">
+                                        <a target="_blank" href={'#'}>
+                                            <img className="h-80 w-full mx-auto object-cover rounded" src={'de'} alt=""/>
                                         </a>
                                     </div>
-                                )
-                            })
-                        }
                     </div>
                     <div className="text-center">
                         <Link className="md:hidden inline-block py-2 px-6 rounded-l-xl rounded-t-xl bg-green-600 hover:bg-green-700 text-gray-50 font-bold leading-loose transition duration-200" href="/projects">

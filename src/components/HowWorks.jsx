@@ -1,13 +1,6 @@
-async function getData(){
-    const res=await fetch(process.env.BASE_URL+"api/WorkList");
-    if(!res.ok){
-        throw new Error("WorkList List Calling Fail");
-    }
-    return res.json();
-}
+
 
 const HowWorks = async () => {
-    const data = await getData();
     return (
         <div>
             <section>
@@ -36,21 +29,16 @@ const HowWorks = async () => {
                         <div className="relative flex flex-wrap -mx-4 z-0">
                             <div className="hidden lg:block absolute inset-x-0 max-w-2xl xl:max-w-3xl mx-auto py-px rounded bg-green-600" style={{top: "10%", zIndex: -1}}/>
 
-                            {
-                                data.map((item,i)=>{
-                                    return(
-                                        <div key={i} className="mb-8 w-full lg:w-1/3 px-4 text-center">
+
+                                        <div className="mb-8 w-full lg:w-1/3 px-4 text-center">
                                             <span className="relative mb-6 lg:mb-10 mx-auto flex w-16 h-16 items-center justify-center bg-green-600 rounded-full text-white text-2xl">
-                                                {item['step']}
+
                                             </span>
-                                            <h3 className="mb-4 text-2xl font-bold font-heading">{item['title']}</h3>
+                                            <h3 className="mb-4 text-2xl font-bold font-heading"></h3>
                                             <p className="text-gray-500 leading-loose">
-                                                {item['des']}
+
                                             </p>
                                         </div>
-                                    )
-                                })
-                            }
 
 
                         </div>

@@ -1,14 +1,6 @@
-async function getData(){
-    const res=await fetch(process.env.BASE_URL+"api/AllProject");
-    if(!res.ok){
-        throw new Error("AllProject Calling Fail");
-    }
-    return res.json();
-}
+
 
 const AllProjects = async () => {
-
-    const data = await getData();
 
     return (
         <section>
@@ -35,19 +27,13 @@ const AllProjects = async () => {
                         </div>
                     </div>
                     <div className="flex flex-wrap -mx-4 mb-4">
-                        {
-                            data.map((item,i)=>{
-                                return(
-                                    <div key={i} className="w-full md:w-1/2 lg:w-1/3 mb-8 px-4">
-                                        <a target="_blank" href={item['live']}>
+                                    <div className="w-full md:w-1/2 lg:w-1/3 mb-8 px-4">
+                                        <a target="_blank" href={'#'}>
                                             <img className="h-80 w-full mx-auto object-cover rounded"
-                                                 src={item['image']}
+                                                 src={'sd'}
                                                  alt=""/>
                                         </a>
                                     </div>
-                                )
-                            })
-                        }
                     </div>
 
                 </div>

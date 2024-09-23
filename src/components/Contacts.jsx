@@ -1,7 +1,5 @@
 "use client"
-import toast, { Toaster } from 'react-hot-toast';
 import {useState} from "react";
-import axios from "axios";
 
 
 const Contacts = () => {
@@ -81,7 +79,7 @@ const Contacts = () => {
                     </div>
                 </div>
             </div>
-            <Toaster position="bottom-center"/>
+
         </section>
 
     );

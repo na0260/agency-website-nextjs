@@ -1,14 +1,6 @@
 import Link from "next/link";
-async function getData(){
-    const res=await fetch(process.env.BASE_URL+"api/HeroList");
-    if(!res.ok){
-        throw new Error("HeroList Calling Fail");
-    }
-    return res.json();
-}
 
 const Hero = async () => {
-    const data = await getData();
     return (
         <div>
             <section className='relative bg-gray-50'>
@@ -20,14 +12,14 @@ const Hero = async () => {
                                     <div className='max-w-md mx-auto lg:mx-0'>
                                         <h2 className='mb-3 text-4xl lg:text-5xl font-bold font-heading'>
                                             <span>
-                                                 {data['title']}
+
                                             </span>
                                             <span className='text-green-600'>problems</span>
                                         </h2>
                                     </div>
                                     <div className='max-w-sm mx-auto lg:mx-0'>
                                         <p className='mb-6 text-gray-400 leading-loose'>
-                                            {data['description']}
+
                                         </p>
                                         <div>
                                             <Link
@@ -42,12 +34,12 @@ const Hero = async () => {
                             </div>
                             <div className='w-full lg:w-1/2 px-4'>
                                 <div className='flex flex-wrap lg:mb-4 lg:ml-6'>
-                                    <img className='w-full md:w-1/2 lg:w-1/3 h-64 p-2 object-cover rounded-4xl lg:rounded-br-none' src={data['image1']} alt=''/>
-                                    <img className='w-full md:w-1/2 lg:w-2/3 h-64 p-2 object-cover rounded-4xl lg:rounded-bl-none' src={data['image2']} alt=''/>
+                                    <img className='w-full md:w-1/2 lg:w-1/3 h-64 p-2 object-cover rounded-4xl lg:rounded-br-none' src={'ds'} alt=''/>
+                                    <img className='w-full md:w-1/2 lg:w-2/3 h-64 p-2 object-cover rounded-4xl lg:rounded-bl-none' src={'ds'} alt=''/>
                                 </div>
                                 <div className='flex flex-wrap lg:mb-4 lg:mr-6'>
-                                    <img className='w-full md:w-1/2 lg:w-2/3 h-64 p-2 object-cover rounded-4xl lg:rounded-br-none' src={data['image3']} alt=''/>
-                                    <img className='w-full md:w-1/2 lg:w-1/3 h-64 p-2 object-cover rounded-4xl lg:rounded-bl-none' src={data['image4']} alt=''/>
+                                    <img className='w-full md:w-1/2 lg:w-2/3 h-64 p-2 object-cover rounded-4xl lg:rounded-br-none' src={'ds'} alt=''/>
+                                    <img className='w-full md:w-1/2 lg:w-1/3 h-64 p-2 object-cover rounded-4xl lg:rounded-bl-none' src={'ds'} alt=''/>
                                 </div>
                             </div>
                         </div>
